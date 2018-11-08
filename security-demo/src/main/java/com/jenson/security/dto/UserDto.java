@@ -17,7 +17,7 @@ public class UserDto {
 	private String userName;
 	
 	
-	@NotBlank
+	@NotBlank(message="ÃÜÂë²»ÄÜÎª¿Õ")
 	private String passowrd;
 	
 	private Date date;

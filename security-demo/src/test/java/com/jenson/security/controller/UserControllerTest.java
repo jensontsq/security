@@ -2,6 +2,7 @@ package com.jenson.security.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -67,6 +68,20 @@ public class UserControllerTest {
 		String content="{\"userName\":\"Tom\",\"passowrd\":null,\"date\":"+date.getTime()+"}";
 		String result=mockMvc.perform(post("/user").contentType(MediaType.APPLICATION_JSON_UTF8).content(content)).andExpect(status().isOk())
 		.andExpect(jsonPath("$.id").value(1)).andReturn().getResponse().getContentAsString();
+		System.out.println(result);
+	}
+	
+	@Test
+	public void whenUpdateSuccess() throws Exception {
+		Date date=new Date();
+		System.out.println(date.getTime());
+		String content="{\"id\":\"1\",\"userName\":\"Tom\",\"passowrd\":null,\"date\":"+date.getTime()+"}";
+		String result=mockMvc.perform(put("/user/1").
+				contentType(MediaType.APPLICATION_JSON_UTF8).
+				content(content)).andExpect(status().isOk())
+		        .andExpect(jsonPath("$.id").value(1)).
+		        andReturn().getResponse()
+		        .getContentAsString();
 		System.out.println(result);
 	}
 

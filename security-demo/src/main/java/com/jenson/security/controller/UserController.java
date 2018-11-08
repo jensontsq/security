@@ -6,9 +6,11 @@ import java.util.List;
 import javax.swing.plaf.synth.SynthSpinnerUI;
 import javax.validation.Valid;
 
+import org.springframework.boot.autoconfigure.web.BasicErrorController;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -54,6 +56,20 @@ public class UserController {
 	 */
 	@PostMapping("/user")
 	public UserDto createSuccess(@Valid @RequestBody UserDto user,BindingResult error) {
+		if(error.hasErrors()) {
+			error.getAllErrors().stream().forEach( errors -> 
+			System.out.println(errors.getDefaultMessage()));
+		}
+		
+		System.out.println(user.getUserName());
+		System.out.println(user.getDate());
+		user.setId("1");
+		return user;
+	}
+	
+	
+	@PutMapping("/user/{id:\\d+}")
+	public UserDto updateSuccess(@Valid @RequestBody UserDto user,BindingResult error) {
 		if(error.hasErrors()) {
 			error.getAllErrors().stream().forEach( errors -> 
 			System.out.println(errors.getDefaultMessage()));
