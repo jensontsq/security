@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>security-demo</artifactId>
+  <parent>
+  	<groupId>com.jenson.security</groupId>
+  	<artifactId>security</artifactId>
+  	<version>1.0.0-SNAPSHOT</version>
+  	<relativePath>../security</relativePath>
+  </parent>
+  
+  
+  <dependencies>
+  		<dependency>
+			<groupId>com.jenson.security</groupId>
+			<artifactId>security-bower</artifactId>
+			<version>${com.jenson.security.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
+       <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+		
+  </dependencies> 
+  
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>1.5.16.RELEASE</version>
+				<executions>
+					<execution>
+						<goals>
+							<!-- 重新打包 -->
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration> <fork>true</fork> </configuration>
+			</plugin>
+
+		</plugins>
+		<!-- 名称 -->
+		<finalName>demo</finalName>
+	</build> 
+</project>
