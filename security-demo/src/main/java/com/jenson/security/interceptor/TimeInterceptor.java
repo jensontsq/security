@@ -11,10 +11,11 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-@Component
+//æ‹¦æˆªå™¨  æ—¢å¯ä»¥æ‹¿åˆ°åŸå§‹ä¿¡æ¯HTTPè¯·æ±‚å’Œç›¸åº”å’Œå…·ä½“æ–¹æ³•ä¿¡æ¯ï¼Œä½†æ˜¯é‚£ä¸åˆ°è¯·æ±‚çš„æ–¹æ³•æ•°æ®ï¼ˆå‚æ•°ï¼‰
+/*@Component*/
 public class TimeInterceptor implements HandlerInterceptor{
 
-	//µ÷ÓÃÖ®Ç°
+	//è°ƒç”¨ä¹‹å‰
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
@@ -22,28 +23,28 @@ public class TimeInterceptor implements HandlerInterceptor{
 		request.setAttribute("startTime",new Date().getTime());
 		System.out.println(((HandlerMethod)handler).getBean().getClass().getName());
 		System.out.println(((HandlerMethod)handler).getMethod().getName());
-		return true; //×¢Òâ£¬¿ØÖÆÄÜ²»ÄÜ·ÃÎÊpostHandle ·½·¨
+		return true; //æ³¨æ„ï¼Œæ§åˆ¶èƒ½ä¸èƒ½è®¿é—®postHandle æ–¹æ³•
 	}
 
-	//controllerÔËĞĞÊ±µ÷ÓÃ£¬Òì³£²»µ÷ÓÃ
+	//controllerè¿è¡Œæ—¶è°ƒç”¨ï¼Œå¼‚å¸¸ä¸è°ƒç”¨
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
 		System.out.println("postHandle");
 		long start=new Date().getTime();
-		System.out.println("time Interceptor ºÄÊ±£º"+(new Date().getTime()-start));
+		System.out.println("time Interceptor è€—æ—¶ï¼š"+(new Date().getTime()-start));
 		
 	}
 
-	//×Ü»áµ÷ÓÃ
+	//æ€»ä¼šè°ƒç”¨
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
 			throws Exception {
 		System.out.println("afterCompletion");
 		long start=new Date().getTime();
-		System.out.println("time Interceptor ºÄÊ±£º"+(new Date().getTime()-start));
+		System.out.println("time Interceptor è€—æ—¶ï¼š"+(new Date().getTime()-start));
 		
-		//Èç¹ûÒì³£Îª¿Õ£¬ÄÇ¾ÍËµÃ÷×Ô¼ºÒÑ¾­¶¨ÒåµÄ@ControllerAdvice ¸ø´¦ÀíÁË ,ËûÔÚafterCompletion Ç°Ö´ĞĞ
+		//å¦‚æœå¼‚å¸¸ä¸ºç©ºï¼Œé‚£å°±è¯´æ˜è‡ªå·±å·²ç»å®šä¹‰çš„@ControllerAdvice ç»™å¤„ç†äº† ,ä»–åœ¨afterCompletion å‰æ‰§è¡Œ
 		System.out.println("ex is:"+ex);
 	}
 

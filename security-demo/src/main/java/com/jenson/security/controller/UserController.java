@@ -49,8 +49,8 @@ public class UserController {
 	}
 	
 	/**
-	 *   @Valid  ¿ªÆôÑéÖ¤
-	 *   BindingResult Èç¹û·¢ÉúÒì³££¬´ø×ÅÒì³£ÐÅÏ¢½øÈë·½·¨ÌåºÍ@Valid ÅäÌ×Ê¹ÓÃ
+	 *   @Valid  å¼€å¯éªŒè¯
+	 *   BindingResult å¦‚æžœå‘ç”Ÿå¼‚å¸¸ï¼Œå¸¦ç€å¼‚å¸¸ä¿¡æ¯è¿›å…¥æ–¹æ³•ä½“å’Œ@Valid é…å¥—ä½¿ç”¨
 	 * @param user
 	 * @return
 	 */
@@ -68,7 +68,7 @@ public class UserController {
 	}
 	
 	
-	@PutMapping("/user/{id:\\d+}")
+	@PutMapping("/user")
 	public UserDto updateSuccess(@Valid @RequestBody UserDto user,BindingResult error) {
 		if(error.hasErrors()) {
 			error.getAllErrors().stream().forEach( errors -> 

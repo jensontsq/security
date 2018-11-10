@@ -12,11 +12,11 @@ import org.springframework.stereotype.Component;
 
 import com.jenson.security.filter.TimeFilter;
 
-//≤ª  ”√springboot @Component◊¢Ω‚
+
 @Configuration
 public class FilterConfig {
 	
- @Bean
+/* @Bean
  public FilterRegistrationBean timeFilter() {
 	 FilterRegistrationBean frb=new FilterRegistrationBean();
 	 TimeFilter timeFilter=new TimeFilter();
@@ -26,6 +26,6 @@ public class FilterConfig {
 	 frb.setUrlPatterns(urls);
 	 return frb;
 	 
- }
+ }*/
 
 }

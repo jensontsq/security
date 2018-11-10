@@ -13,10 +13,10 @@ import com.jenson.security.interceptor.TimeInterceptor;
 public class webConfig extends WebMvcConfigurerAdapter{
 
 	
-	@Autowired
+/*	@Autowired
 	private TimeInterceptor time;
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(time);
 	}
-	
+	*/
 }

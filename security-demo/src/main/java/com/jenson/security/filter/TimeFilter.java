@@ -12,7 +12,7 @@ import javax.servlet.ServletResponse;
 
 import org.springframework.stereotype.Component;
 
-//������
+//过滤器 可以获取原始请求信息，拿不到处理方法得信息
 /*@Component*/
 public class TimeFilter implements Filter{
 

@@ -1,3 +1,6 @@
+
+
+
 package com.jenson.security.validater;
 
 import java.lang.annotation.ElementType;
@@ -7,11 +10,11 @@ import java.lang.annotation.Target;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
-//±íÊ¾ÊµÔÚÄÇ¸öµØ·½Æğ×÷ÓÃ
+//è¡¨ç¤ºå®åœ¨é‚£ä¸ªåœ°æ–¹èµ·ä½œç”¨
 @Target({ElementType.METHOD,ElementType.FIELD})
-//ÔËĞĞÊ±µÄ×¢½â
+//è¿è¡Œæ—¶çš„æ³¨è§£
 @Retention(RetentionPolicy.RUNTIME)
-//±íÊ¾ÓÃÓÚ×¢½â,validatedBy  ×¢½âÂß¼­ÔÚÄÄ¸öÀà
+//è¡¨ç¤ºç”¨äºæ³¨è§£,validatedBy  æ³¨è§£é€»è¾‘åœ¨å“ªä¸ªç±»
 @Constraint(validatedBy=TestConstarint.class)
 public @interface TestValidater {
 	

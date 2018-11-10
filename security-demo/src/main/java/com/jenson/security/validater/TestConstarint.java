@@ -7,7 +7,7 @@ public class TestConstarint implements ConstraintValidator<TestValidater, Object
 
 	@Override
 	public void initialize(TestValidater constraintAnnotation) {
-		System.out.println("У�鿪ʼ");
+		System.out.println("校验开始");
 	}
 
 	@Override
@@ -17,3 +17,5 @@ public class TestConstarint implements ConstraintValidator<TestValidater, Object
 	}
 
 }
+
+
