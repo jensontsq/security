@@ -12,7 +12,7 @@
   <dependencies>
   		<dependency>
 			<groupId>com.jenson.security</groupId>
-			<artifactId>security-bower</artifactId>
+			<artifactId>security-browser</artifactId>
 			<version>${com.jenson.security.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->

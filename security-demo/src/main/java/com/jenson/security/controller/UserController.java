@@ -27,7 +27,7 @@ import com.jenson.security.dto.UserDto.UserDtoSimpleView;
 public class UserController {
 	
 	
-	@RequestMapping(value="/user",method=RequestMethod.GET)
+	@RequestMapping(value="/users",method=RequestMethod.POST)
 	@JsonView(UserDtoSimpleView.class)
 	public List<UserDto> query(@RequestParam String userName) {
 		System.out.println(userName);

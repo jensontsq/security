@@ -47,7 +47,7 @@
     
   <modules>
   	<module>../security-app</module>
-  	<module>../security-bower</module>
+  	<module>../security-browser</module>
   	<module>../security-core</module>
   	<module>../security-demo</module>
   </modules>

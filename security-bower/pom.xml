@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>security-bower</artifactId>
+  <artifactId>security-browser</artifactId>
   <parent>
   	<groupId>com.jenson.security</groupId>
   	<artifactId>security</artifactId>
@@ -14,5 +14,9 @@
   		<artifactId>security-core</artifactId>
   		<version>${com.jenson.security.version}</version>
   	</dependency>
+  	<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session</artifactId>
+		</dependency>
   </dependencies>
 </project>
