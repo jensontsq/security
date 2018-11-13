@@ -7,7 +7,11 @@ import javax.swing.plaf.synth.SynthSpinnerUI;
 import javax.validation.Valid;
 
 import org.springframework.boot.autoconfigure.web.BasicErrorController;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -25,6 +29,13 @@ import com.jenson.security.dto.UserDto.UserDtoSimpleView;
 
 @RestController
 public class UserController {
+	
+	
+	//获取认证信息
+	@GetMapping("/me")
+	public Object getCurrentUser(@AuthenticationPrincipal UserDetails authentication) {
+		return authentication;
+	}
 	
 	
 	@RequestMapping(value="/users",method=RequestMethod.POST)

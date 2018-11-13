@@ -27,7 +27,7 @@ public class BrowserSecurityController {
 	
 	Logger log=LoggerFactory.getLogger(BrowserSecurityController.class);
 	
-	//从springsession缓存获取
+	//从springsession缓存获取  请求缓存
     private RequestCache requestCache=new HttpSessionRequestCache();
     
     private RedirectStrategy redirectStrategy=new DefaultRedirectStrategy();
