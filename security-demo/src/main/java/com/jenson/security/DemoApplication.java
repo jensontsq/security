@@ -13,8 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ComponentScan(basePackages = {"com.jenson.security","com.jenson.browser","com.jenson.core"})
 public class DemoApplication {
 
-	
 	public static void main(String[] args) {
-			SpringApplication.run(DemoApplication.class, args);
+			SpringApplication.run(DemoApplication.class, args); 
 	}
 } 

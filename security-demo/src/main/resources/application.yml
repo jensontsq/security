@@ -10,8 +10,14 @@ spring:
 #  basic:
  #   enabled: false
  
-#jenson:
-#   security:
+jenson:
+   security:
+        length: 6
+        width: 100
 #     borwser:
  #     loginPage: /demo-login.html
+    
+        
+       
+      
     
